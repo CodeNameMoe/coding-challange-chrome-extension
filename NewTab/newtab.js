@@ -12,7 +12,7 @@ function formatTime(date) {
 
 // Function to get the full date
 function formatDate(date) {
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const monthNames = ["January", "February", "March", "April", "May", "June", 
                         "July", "August", "September", "October", "November", "December"];
 
@@ -24,11 +24,18 @@ function formatDate(date) {
     return `${day}, ${month} ${dateNum}, ${year}`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const now = new Date();
-    let fullDate = formatDate(now);
-    let currentTime = formatTime(now);
+// Function to update the date and time on the page
+function updateDateTime() {
+    const now = new Date(); // Create a new Date object representing the current date and time
+    let fullDate = formatDate(now); // Pass the Date object to formatDate
+    let currentTime = formatTime(now); // Pass the same Date object to formatTime
 
     document.querySelector('.date').textContent = fullDate;
     document.querySelector('.time').textContent = currentTime;
+}
+
+// Ensure the DOM is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', () => {
+    updateDateTime(); // Initial call to display the date and time immediately
+    setInterval(updateDateTime, 60000); // Update the time every 60 seconds (60000 milliseconds)
 });
