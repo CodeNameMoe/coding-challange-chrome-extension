@@ -1,15 +1,15 @@
 {
     "manifest_version": 3,
-    "name": "coding challange",
+    "name": "coding challange - bg",
     "description": "Base Level Extension",
     "version": "1.0",
     "chrome_url_overrides": {
-        "newtab": "newtab.html"
+        "newtab": "/NewTab/newtab.html"
       },
       "permissions": [],
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": "hello_extensions.png"
+      "default_popup": "/popUp/popup.html",
+      "default_icon": "/assets/hello_extensions.png"
     }
   }
   
